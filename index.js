@@ -22,12 +22,15 @@ dayofTheWeekElement.innerHTML = dayName;
 const currentUTCDate = new Date();
 
 //get the current time from the date object
+const currentUTCYear = currentUTCDate.getUTCFullYear();
+const currentUTCMonth = currentUTCDate.getUTCMonth() + 1;
+const currentUTCDay = currentUTCDate.getUTCDay();
 const currentUTCHours = currentUTCDate.getUTCHours();
 const currentUTCMinutes = currentUTCDate.getUTCMinutes();
 const currentUTCSeconds = currentUTCDate.getUTCSeconds();
 
 //get the current time in the format HH:MM:SS
-const currentUTCTime = `${currentUTCHours}:${currentUTCMinutes}:${currentUTCSeconds} UTC`;
+const currentUTCTime = `${currentUTCYear}-${currentUTCMonth}-${currentUTCDay} ${currentUTCHours}:${currentUTCMinutes}:${currentUTCSeconds} UTC`;
 
 //display on the page
 const currentUTCTimeElement = document.getElementById("currentUTCTime");
