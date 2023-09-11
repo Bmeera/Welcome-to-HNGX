@@ -21,7 +21,7 @@ dayofTheWeekElement.innerHTML = dayName;
 
 function updateUTCTime() {
   const currentUTCTime = new Date().getTime();
-  document.getElementById("currentUTCTime").innerHTML = `Current UTC Time: ${currentUTCTime}`
+  document.getElementById("currentUTCTime").innerHTML = `Current UTC Time in Milliseconds: ${currentUTCTime}`
 }
 // Call the function initially
   updateUTCTime();
