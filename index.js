@@ -17,22 +17,15 @@ const dayofTheWeekElement = document.getElementById("currentDayOfTheWeek");
 
 dayofTheWeekElement.innerHTML = dayName;
 
-/* To Display Current UTC Time */
-//create a new Date object
-const currentUTCDate = new Date();
+/* To Display Current UTC Time in Milliseconds*/
 
-//get the current time from the date object
-const currentUTCYear = currentUTCDate.getUTCFullYear();
-const currentUTCMonth = currentUTCDate.getUTCMonth() + 1;
-const currentUTCDay = currentUTCDate.getUTCDay();
-const currentUTCHours = currentUTCDate.getUTCHours();
-const currentUTCMinutes = currentUTCDate.getUTCMinutes();
-const currentUTCSeconds = currentUTCDate.getUTCSeconds();
+function updateUTCTime() {
+  const currentUTCTime = new Date().getTime();
+  document.getElementById("currentUTCTime").innerHTML = `Current UTC Time: ${currentUTCTime}`
+}
+// Call the function initially
+  updateUTCTime();
 
-//get the current time in the format HH:MM:SS
-const currentUTCTime = `${currentUTCYear}-${currentUTCMonth}-${currentUTCDay} ${currentUTCHours}:${currentUTCMinutes}:${currentUTCSeconds} UTC`;
-
-//display on the page
-const currentUTCTimeElement = document.getElementById("currentUTCTime");
-currentUTCTimeElement.innerHTML = currentUTCTime;
+// Update the time every millisecond
+  setInterval(updateUTCTime, 1);
 
